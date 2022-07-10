@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        'md': '0px 0px 25px rgba(45, 58, 33, 0.2)',
+        'md': '0px 0px 10px rgba(45, 58, 33, 0.1)',
       },
       colors: {
         primary: "#2D3A21",

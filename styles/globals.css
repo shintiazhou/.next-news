@@ -29,6 +29,20 @@ body {
     @apply text-sm;
   }
 }
+
+.react-multiple-carousel__arrow--right {
+  right: 5px !important;
+  background: rgba(255, 162, 59, 0.5) !important;
+}
+.react-multiple-carousel__arrow--left {
+  left: 5px !important;
+  background: rgba(255, 162, 59, 0.5) !important;
+}
+.react-multiple-carousel__arrow {
+  z-index: 4 !important;
+  color: #2191fb !important;
+}
+
 @media only screen and (max-width: 480) {
   @layer base {
     p,

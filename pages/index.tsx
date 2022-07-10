@@ -20,11 +20,14 @@ const Home = ({ productByCategory }: Props) => {
 
       <main className="text-primary">
         {productByCategory.map((product) => (
-          <div className="my-10" key={product.categoryId}>
-            <h2 className="px-4">{product.displayName}</h2>
+          <div className="pt-4 px-4" key={product.categoryId}>
+            <h2 className="px-2 container mx-auto">{product.displayName}</h2>
             <CustomCarousel>
               {product.products.map((item) => (
-                <div key={item.productId} className="py-8 px-4 h-full">
+                <div
+                  key={item.productId}
+                  className="py-6 px-2 h-full select-none cursor-pointer"
+                >
                   <Card item={item} />
                 </div>
               ))}
