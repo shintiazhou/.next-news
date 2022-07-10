@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^6.2.1",
+    "@tailwindcss/line-clamp": "^0.4.0",
     "next": "12.2.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-multi-carousel": "^2.8.2"
   },
   "devDependencies": {
     "@types/node": "18.0.3",

@@ -6,7 +6,7 @@ export interface IProductDetail {
   rating: string;
   reviews: string;
   targetUrl: string;
-  image450: string;
+  image250: string;
 }
 
 export interface IProduct {
