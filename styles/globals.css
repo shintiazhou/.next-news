@@ -30,6 +30,19 @@ body {
   }
 }
 
+button {
+  @apply bg-primary;
+  @apply text-tertiary;
+  padding: 10px 15px;
+  margin: 5px 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+button:hover {
+  @apply shadow-lg;
+}
+
 @media only screen and (max-width: 480) {
   @layer base {
     p {

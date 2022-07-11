@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       boxShadow: {
         'md': '0px 0px 10px rgba(45, 58, 33, 0.1)',
+        'lg': '0px 0px 10px rgba(45, 58, 33, 0.4)',
       },
       colors: {
         primary: "#2D3A21",
