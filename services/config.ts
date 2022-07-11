@@ -1,6 +1,5 @@
-export const baseURL = "https://sephora.p.rapidapi.com/";
-
-export const headers = {
-  "X-RapidAPI-Key": process.env.API_KEY!,
-  "X-RapidAPI-Host": process.env.API_HOST!,
-};
+const baseURL =
+  "http://api.mediastack.com/v1/news?access_key=" +
+  process.env.API_KEY +
+  "&sources=en";
+export default baseURL;

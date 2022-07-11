@@ -5,6 +5,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      screens: {
+        lg: '1280px',
+        xl: '1280px',
+      }
+    },
     extend: {
       boxShadow: {
         'md': '0px 0px 10px rgba(45, 58, 33, 0.1)',

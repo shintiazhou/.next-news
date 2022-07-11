@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Lora, Helvetica, sans-serif;
+  font-family: Lato, Helvetica, sans-serif;
 }
 @tailwind base;
 @tailwind components;
@@ -26,28 +26,14 @@ body {
     @apply font-bold;
   }
   p {
-    @apply text-sm;
+    @apply text-lg;
   }
-}
-
-.react-multiple-carousel__arrow--right {
-  right: 5px !important;
-  background: rgba(255, 162, 59, 0.5) !important;
-}
-.react-multiple-carousel__arrow--left {
-  left: 5px !important;
-  background: rgba(255, 162, 59, 0.5) !important;
-}
-.react-multiple-carousel__arrow {
-  z-index: 4 !important;
-  color: #2191fb !important;
 }
 
 @media only screen and (max-width: 480) {
   @layer base {
-    p,
-    small {
-      @apply text-xs;
+    p {
+      @apply text-base;
     }
   }
 }
