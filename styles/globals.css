@@ -30,17 +30,13 @@ body {
   }
 }
 
-button {
-  @apply bg-primary;
-  @apply text-tertiary;
-  padding: 10px 15px;
-  margin: 5px 0;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-button:hover {
-  @apply shadow-lg;
+.logo-text {
+  display: block;
+  font-family: Merriweather serif;
+  font-weight: 900;
+  cursor: pointer;
+  @apply text-primary;
+  @apply text-3xl;
 }
 
 @media only screen and (max-width: 480) {

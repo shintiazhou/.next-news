@@ -1,10 +1,10 @@
 export interface INews {
   author: string | null;
   category: string;
-  country: string;
   description: string;
-  image: string;
-  published_at: string;
+  urlToImage: string;
+  publishedAt: string;
   title: string;
   url: string;
+  content: string;
 }
