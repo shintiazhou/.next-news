@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className="bg-tertiary">
       <div className="bg-tertiary fixed inset-x-0 top-0 w-full z-20">
-        <div className="container mx-auto flex justify-between items-center py-4 md:px-10 px-4 gap-10">
+        <div className="container mx-auto flex justify-between items-center py-4 md:px-10 px-4 gap-14">
           <section className="flex-1 hidden md:block">
             <TextField
               search
