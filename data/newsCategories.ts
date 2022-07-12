@@ -1,7 +1,7 @@
 const newsCategories = [
+  "General",
   "Business",
   "Entertainment",
-  "General",
   "Health",
   "Science",
   "Sports",

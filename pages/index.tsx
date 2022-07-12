@@ -3,12 +3,15 @@ import { GetStaticProps } from "next";
 import { getLatestNews } from "../services";
 import { INews } from "./../models/INews";
 import HeadingNews from "../components/HeadingNews";
+import Categories from "../components/Categories";
+import { useState } from "react";
 
 type Props = {
   newsData: INews[];
 };
 
 const Home = ({ newsData }: Props) => {
+  const [selectedCategory, setSelectedCategory] = useState("general");
   return (
     <div>
       <Head>
@@ -19,6 +22,10 @@ const Home = ({ newsData }: Props) => {
 
       <main className="text-primary container mx-auto">
         {newsData && <HeadingNews headingNews={newsData[0]} />}
+        <Categories
+          selectedCategory={selectedCategory}
+          setSelectedCategory={(value) => setSelectedCategory(value)}
+        />
       </main>
     </div>
   );
