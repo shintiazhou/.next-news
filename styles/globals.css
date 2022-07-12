@@ -30,15 +30,6 @@ body {
   }
 }
 
-.logo-text {
-  display: block;
-  font-family: Merriweather serif;
-  font-weight: 900;
-  cursor: pointer;
-  @apply text-primary;
-  @apply text-3xl;
-}
-
 @media only screen and (max-width: 480) {
   @layer base {
     p {
