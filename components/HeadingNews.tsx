@@ -9,7 +9,9 @@ type Props = {
 };
 
 const HeadingNews = ({ headingNews }: Props) => {
-  const content = headingNews.content.split("[")[0];
+  const content = headingNews.content
+    ? headingNews.content.split("[")[0]
+    : headingNews.description;
   return (
     <section className="md:relative border-b-4 border-primary py-10 md:pb-60">
       <div
