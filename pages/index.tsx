@@ -9,7 +9,6 @@ type Props = {
 };
 
 const Home = ({ newsData }: Props) => {
-  console.log(newsData);
   return (
     <div>
       <Head>
