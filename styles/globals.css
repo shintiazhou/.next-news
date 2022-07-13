@@ -3,6 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: Lato, Helvetica, sans-serif;
+  background-color: #f6f5ec;
 }
 @tailwind base;
 @tailwind components;
@@ -33,7 +34,7 @@ body {
 @media only screen and (max-width: 480) {
   @layer base {
     p {
-      @apply text-base;
+      @apply text-sm;
     }
   }
 }
