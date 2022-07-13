@@ -16,7 +16,10 @@ const Home = ({ newsData }: Props) => {
   const router = useRouter();
   const queryParam = router.query.category;
   const filteredNews =
-    newsData && newsData.filter((news) => news.urlToImage !== null);
+    newsData &&
+    newsData.filter(
+      (news) => news.urlToImage !== null && news.urlToImage.includes("https")
+    );
   return (
     <div>
       <Head>
