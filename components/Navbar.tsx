@@ -5,11 +5,14 @@ import logo from "../public/logo_full.png";
 import TextField from "./TextField";
 import { useState } from "react";
 import Categories from "./Categories";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [searchInput, setSearchInput] = useState("");
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setSearchInput(e.target.value);
+
+  const router = useRouter();
 
   return (
     <nav className="bg-tertiary">
@@ -24,16 +27,15 @@ const Navbar = () => {
             />
           </section>
 
-          <section className="cursor-pointer">
-            <Link href="/general">
-              <Image
-                objectFit="contain"
-                src={logo}
-                alt="logo"
-                width={130}
-                height={50}
-              />
-            </Link>
+          <section className="cursor-pointer ">
+            <Image
+              objectFit="contain"
+              src={logo}
+              alt="logo"
+              width={130}
+              height={50}
+              onClick={() => router.replace("/general")}
+            />
           </section>
           <section className="flex-1 flex items-center justify-end gap-4">
             <Button>Sign In</Button>

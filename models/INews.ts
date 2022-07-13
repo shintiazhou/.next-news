@@ -7,4 +7,8 @@ export interface INews {
   title: string;
   url: string;
   content: string;
+  source: {
+    id: string | null;
+    name: string;
+  };
 }

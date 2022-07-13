@@ -2,43 +2,62 @@ import React from "react";
 import { INews } from "../models/INews";
 import Image from "next/image";
 import { formatDistance } from "date-fns";
+import DefaultImage from "./DefaultImage";
 
 type Props = {
   newsData: INews;
 };
 
 const NewsCard = ({ newsData }: Props) => {
-  const author = newsData.author && !newsData.author.includes("http") && (
-    <span style={{ maxWidth: "120px" }} className="truncate ... ">
-      {newsData.author}
-    </span>
-  );
+  const author =
+    newsData.author && !newsData.author.includes("http")
+      ? newsData.author
+      : newsData.source.name;
+
+  const content = newsData.content
+    ? newsData.content.split("[")[0]
+    : newsData.description;
+
   return (
     <article
       onClick={() => window.open(newsData.url)}
-      className="bg-white p-2 flex rounded-xl my-4 shadow-md gap-4 overflow-hidden"
+      className="
+      bg-white sm:bg-transparent shadow-md sm:shadow-none sm:mb-4 p-2 
+      flex sm:flex-col
+       rounded-xl  gap-4 overflow-hidden 
+       cursor-pointer
+       "
     >
-      <div className="w-20 h-20 flex flex-col">
-        <Image
+      <div
+        className="w-20 sm:w-full 
+      h-20 sm:h-40 md:h-52
+      flex flex-col"
+      >
+        <DefaultImage
           src={newsData.urlToImage}
           alt={newsData.title}
-          loader={() => newsData.urlToImage}
-          layout="fixed"
           objectFit="cover"
           height={80}
           width={80}
         />
       </div>
-      <div className="flex flex-col w-3/4 px-1 text-sm gap-2">
-        <p className="opacity-50 text-xs flex justify-between">
-          {author}
+      <div className="flex flex-col w-3/4 sm:w-full px-1 text-sm gap-2">
+        <p className="opacity-50 text-xs sm:text-sm flex justify-between">
+          <span style={{ width: "70%" }} className="truncate ... ">
+            {author}
+          </span>
+
           <span>
             {formatDistance(new Date(newsData.publishedAt), new Date(), {
               addSuffix: true,
             }).replace("about", "")}
           </span>
         </p>
-        <strong className="line-clamp-2">{newsData.title}</strong>
+        <strong className="line-clamp-2 sm:text-lg sm:font-extrabold">
+          {newsData.title}
+        </strong>
+
+        <p className="hidden sm:block">{content}</p>
       </div>
     </article>
   );

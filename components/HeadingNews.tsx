@@ -3,6 +3,8 @@ import Image from "next/image";
 import { formatDistance } from "date-fns";
 import { INews } from "./../models/INews";
 import Button from "./Button";
+import blurDataURL from "../utils/blurDataURL";
+import DefaultImage from "./DefaultImage";
 
 type Props = {
   headingNews: INews;
@@ -12,32 +14,26 @@ const HeadingNews = ({ headingNews }: Props) => {
   const content = headingNews.content
     ? headingNews.content.split("[")[0]
     : headingNews.description;
-  console.log;
 
   return (
     <section
       className="
-      p-4 md:pb-60 
+      p-4 sm:px-2 md:pb-60 
       bg-white sm:bg-transparent 
-      shadow-md sm:shadow-none rounded-xl md:rounded-none
+      shadow-md sm:shadow-none rounded-xl sm:rounded-none
       border-primary  
-      md:relative md:border-b-4 "
+      md:relative sm:border-b-4 "
     >
-      <div
+      <DefaultImage
+        objectFit="cover"
         style={{ maxHeight: "800px" }}
         className="flex flex-col w-full h-56 md:h-full md:p-4"
-      >
-        <Image
-          loader={() => headingNews.urlToImage}
-          src={headingNews.urlToImage}
-          layout="responsive"
-          objectFit="cover"
-          height={500}
-          width={500}
-          alt={headingNews.title}
-          priority
-        />
-      </div>
+        height={500}
+        width={500}
+        src={headingNews.urlToImage}
+        alt={headingNews.title}
+      />
+
       <div
         className="
         bg-white sm:bg-tertiary 

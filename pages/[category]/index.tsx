@@ -33,14 +33,18 @@ const Home = ({ newsData }: Props) => {
           <>
             <HeadingNews headingNews={newsData[0]} />
             <br />
-            <div className="flex justify-between">
-              <strong className="capitalize">{queryParam}</strong>
+            <div className="flex justify-between mx-2 mb-4">
+              <strong className="capitalize sm:text-2xl font-extrabold">
+                {queryParam}
+              </strong>
               <span className="text-blue-500 font-bold">See More</span>
             </div>
-            {filteredNews.map(
-              (news, index) =>
-                index > 0 && <NewsCard key={index} newsData={news} />
-            )}
+            <div className="flex flex-col sm:grid grid-cols-2 md:grid-cols-3 gap-4">
+              {filteredNews.map(
+                (news, index) =>
+                  index > 0 && <NewsCard key={index} newsData={news} />
+              )}
+            </div>
           </>
         )}
       </main>
