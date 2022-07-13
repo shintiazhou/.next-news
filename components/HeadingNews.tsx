@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { format } from "date-fns";
+import { formatDistance } from "date-fns";
 import { INews } from "./../models/INews";
 import Button from "./Button";
 
@@ -17,9 +17,9 @@ const HeadingNews = ({ headingNews }: Props) => {
   return (
     <section
       className="
-      m-4 p-4  md:pb-60 
+      p-4 md:pb-60 
       bg-white sm:bg-transparent 
-      shadow-lg sm:shadow-none rounded-xl 
+      shadow-md sm:shadow-none rounded-xl md:rounded-none
       border-primary  
       md:relative md:border-b-4 "
     >
@@ -34,7 +34,7 @@ const HeadingNews = ({ headingNews }: Props) => {
           objectFit="cover"
           height={500}
           width={500}
-          alt="hero"
+          alt={headingNews.title}
           priority
         />
       </div>
@@ -44,9 +44,11 @@ const HeadingNews = ({ headingNews }: Props) => {
         md:absolute mx-auto inset-x-0 md:px-10 md:py-8 bottom-20 
         md:shadow-md md:w-4/5  mt-6"
       >
-        <p>
+        <p className="opacity-50">
           {headingNews.author && headingNews.author + " - "}
-          {format(new Date(headingNews.publishedAt), "MMMM dd ,yyyy")}
+          {formatDistance(new Date(headingNews.publishedAt), new Date(), {
+            addSuffix: true,
+          })}
         </p>
         <h1 className="text-lg md:text-3xl my-2 line-clamp-2 md:line-clamp-none">
           {headingNews.title}

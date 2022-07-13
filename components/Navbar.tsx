@@ -25,7 +25,7 @@ const Navbar = () => {
           </section>
 
           <section className="cursor-pointer">
-            <Link href="/">
+            <Link href="/general">
               <Image
                 objectFit="contain"
                 src={logo}
