@@ -28,19 +28,16 @@ const NewsCard = ({ newsData }: Props) => {
        cursor-pointer
        "
     >
-      <div
-        className="w-20 sm:w-full 
+      <DefaultImage
+        blurPreload={false}
+        src={newsData.urlToImage}
+        alt={newsData.title}
+        objectFit="cover"
+        layout="fill"
+        className="relative w-20 sm:w-full 
       h-20 sm:h-40 md:h-52
       flex flex-col"
-      >
-        <DefaultImage
-          src={newsData.urlToImage}
-          alt={newsData.title}
-          objectFit="cover"
-          height={80}
-          width={80}
-        />
-      </div>
+      />
       <div className="flex flex-col w-3/4 sm:w-full px-1 text-sm gap-2">
         <p className="opacity-50 text-xs sm:text-sm flex justify-between">
           <span style={{ width: "70%" }} className="truncate ... ">

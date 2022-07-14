@@ -1,12 +1,15 @@
-import React from "react";
-import Image, { StaticImageData } from "next/image";
+import React, { useState } from "react";
+import Image from "next/image";
 import blurDataURL from "../utils/blurDataURL";
-
 interface Props {
   src: string;
   alt: string;
-  width: number;
+  width?: number;
+  height?: number;
+  blurPreload: boolean;
+  className?: string;
   objectFit: "cover" | "contain";
+  layout?: "responsive" | "fill";
   [x: string]: any;
 }
 
@@ -16,23 +19,20 @@ const DefaultImage = ({
   width,
   height,
   objectFit,
+  blurPreload,
+  className,
   ...otherProps
 }: Props) => {
+  const [source, setSource] = useState(src);
   return (
-    <div
-      {...otherProps}
-      style={{ maxHeight: "800px" }}
-      className="flex flex-col w-full h-56 md:h-full md:p-4"
-    >
+    <div {...otherProps} style={{ maxHeight: "800px" }} className={className}>
       <Image
-        loader={() => src}
-        src={src}
-        layout="responsive"
+        src={source}
+        layout="fill"
         objectFit={objectFit}
-        height={height}
-        width={width}
         alt={alt}
-        placeholder="blur"
+        onError={() => setSource("/error_image.jpg")}
+        placeholder={blurPreload ? "blur" : "empty"}
         blurDataURL={blurDataURL(width, height)}
         priority
       />

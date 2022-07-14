@@ -25,9 +25,9 @@ const HeadingNews = ({ headingNews }: Props) => {
       md:relative sm:border-b-4 "
     >
       <DefaultImage
+        className="relative w-full h-56 md:h-96 md:p-4"
         objectFit="cover"
-        style={{ maxHeight: "800px" }}
-        className="flex flex-col w-full h-56 md:h-full md:p-4"
+        blurPreload={true}
         height={500}
         width={500}
         src={headingNews.urlToImage}
@@ -51,7 +51,7 @@ const HeadingNews = ({ headingNews }: Props) => {
         </h1>
         <p className="hidden sm:block">{content}</p>
         <Button
-          className="mt-4 hidden sm:block"
+          className="sm:mt-4"
           onClick={() => window.open(headingNews.url)}
         >
           Read More
