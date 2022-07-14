@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import blurDataURL from "../utils/blurDataURL";
 interface Props {
@@ -23,15 +23,13 @@ const DefaultImage = ({
   className,
   ...otherProps
 }: Props) => {
-  const [source, setSource] = useState(src);
   return (
     <div {...otherProps} style={{ maxHeight: "800px" }} className={className}>
       <Image
-        src={source}
+        src={src}
         layout="fill"
         objectFit={objectFit}
         alt={alt}
-        onError={() => setSource("/error_image.jpg")}
         placeholder={blurPreload ? "blur" : "empty"}
         blurDataURL={blurDataURL(width, height)}
         priority
