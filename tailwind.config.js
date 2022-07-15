@@ -19,7 +19,8 @@ module.exports = {
       colors: {
         primary: "#2D3A21",
         secondary: "#FFA23B",
-        tertiary: "#F6F5EC"
+        tertiary: "#F6F5EC",
+        muted: "rgba(45, 58, 33, 0.2)",
       },
     },
   },

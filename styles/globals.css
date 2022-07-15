@@ -5,6 +5,20 @@ body {
   font-family: Lato, Helvetica, sans-serif;
   background-color: #f6f5ec;
 }
+input[type="checkbox"] {
+  accent-color: #2d3a21;
+}
+
+.animate-container .live {
+  animation: live 20s ease 0s infinite normal both;
+}
+.animate-container .exclamation {
+  animation: bounce 8s ease 0s infinite normal forwards;
+}
+.animate-container .message {
+  animation: bounce 8s ease 2s infinite normal forwards;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,6 +45,64 @@ body {
   }
 }
 
+@keyframes live {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+
+  10% {
+    transform: rotate(8deg);
+  }
+
+  20%,
+  40%,
+  60% {
+    transform: rotate(-10deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: rotate(10deg);
+  }
+
+  80% {
+    transform: rotate(-8deg);
+  }
+
+  90% {
+    transform: rotate(8deg);
+  }
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateY(-8px);
+  }
+
+  20%,
+  40%,
+  60% {
+    transform: translateY(8px);
+  }
+
+  80% {
+    transform: translateY(6.4px);
+  }
+
+  90% {
+    transform: translateY(-6.4px);
+  }
+}
 @media only screen and (max-width: 480) {
   @layer base {
     p {

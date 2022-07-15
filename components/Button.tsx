@@ -26,7 +26,7 @@ const Button = ({
   return (
     <button
       {...otherProps}
-      className={`transition-all hover:shadow-md cursor-pointer ${
+      className={`transition-all active:scale-105 hover:shadow-md cursor-pointer ${
         styles[variant as keyof Styles]
       } ${className}`}
     >

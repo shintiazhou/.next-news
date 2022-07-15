@@ -7,6 +7,7 @@ import newsCategories from "../../data/newsCategories";
 import { baseURL } from "../../services/config";
 import NewsCard from "../../components/NewsCard";
 import { useRouter } from "next/router";
+import Categories from "../../components/Categories";
 
 type Props = {
   newsData: INews[];
@@ -27,7 +28,7 @@ const Home = ({ newsData }: Props) => {
         <meta name="description" content="Browse any news" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Categories />
       <main className="text-primary container mx-auto p-4 ">
         {newsData && (
           <>
