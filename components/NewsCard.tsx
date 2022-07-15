@@ -40,7 +40,7 @@ const NewsCard = ({ newsData }: Props) => {
       />
       <div className="flex flex-col w-3/4 sm:w-full px-1 text-sm gap-2">
         <p className="opacity-50 text-xs sm:text-sm flex justify-between">
-          <span style={{ width: "70%" }} className="truncate ... ">
+          <span style={{ width: "60%" }} className="truncate ... ">
             {author}
           </span>
 
