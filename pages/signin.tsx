@@ -2,6 +2,7 @@ import React from "react";
 import NewsIllustration from "./../assets/newsIllustration";
 import Button from "./../components/Button";
 import TextField from "./../components/TextField";
+import { signInWithGoogle } from "./../services/firebase";
 
 const signin = () => {
   return (
@@ -12,10 +13,10 @@ const signin = () => {
             items-center lg:justify-between
             container mx-auto text-primary"
       >
-        <div className="animate-container w-full lg:w-4/5 overflow-hidden ">
+        <div className="animate-container w-2/3 lg:w-4/5 overflow-hidden ">
           <NewsIllustration />
         </div>
-        <section className="text-center lg:w-1/2  lg:bg-tertiary p-10">
+        <section className="text-center lg:w-1/2  lg:bg-tertiary p-4 md:p-10 mb-10 lg:mb-0">
           <h1 className="text-3xl mb-4">
             Welcome Back to
             <span className="text-secondary"> .NextNews</span>
@@ -43,7 +44,9 @@ const signin = () => {
             </div>
             <Button>Log In</Button>
             <p>or</p>
-            <Button variant="outlined">Log in with google</Button>
+            <Button onClick={signInWithGoogle} variant="outlined">
+              Log in with google
+            </Button>
           </div>
         </section>
       </div>
